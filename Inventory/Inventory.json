@@ -1,0 +1,359 @@
+[
+  {
+    "ItemId": 1001,
+    "Quantity": 50,
+    "ItemType": 0,
+    "Location": "Aisle 4, Shelf B",
+    "Seasonal": 0
+  },
+  {
+    "ItemId": 1002,
+    "Quantity": 15,
+    "ItemType": 1,
+    "Location": "Warehouse Rack 12",
+    "Seasonal": 2
+  },
+  {
+    "ItemId": 1003,
+    "Quantity": 200,
+    "ItemType": 0,
+    "Location": "Front Display Bin",
+    "Seasonal": 1
+  },
+  {
+    "ItemId": 1004,
+    "Quantity": 58,
+    "ItemType": 3,
+    "Location": "Secure Storage Room",
+    "Seasonal": 0
+  },
+  {
+    "ItemId": 1005,
+    "Quantity": 120,
+    "ItemType": 2,
+    "Location": "Aisle 1, Shelf A",
+    "Seasonal": 3
+  },
+  {
+    "ItemId": 1006,
+    "Quantity": 45,
+    "ItemType": 1,
+    "Location": "Aisle 2, Shelf C",
+    "Seasonal": 0
+  },
+  {
+    "ItemId": 1007,
+    "Quantity": 50,
+    "ItemType": 4,
+    "Location": "Receiving Bay",
+    "Seasonal": 1
+  },
+  {
+    "ItemId": 1008,
+    "Quantity": 300,
+    "ItemType": 0,
+    "Location": "Bulk Storage Area",
+    "Seasonal": 2
+  },
+  {
+    "ItemId": 1009,
+    "Quantity": 25,
+    "ItemType": 2,
+    "Location": "Aisle 3, Shelf D",
+    "Seasonal": 0
+  },
+  {
+    "ItemId": 1010,
+    "Quantity": 88,
+    "ItemType": 3,
+    "Location": "Endcap 4",
+    "Seasonal": 3
+  },
+  {
+    "ItemId": 1011,
+    "Quantity": 62,
+    "ItemType": 1,
+    "Location": "Aisle 5, Shelf A",
+    "Seasonal": 0
+  },
+  {
+    "ItemId": 1012,
+    "Quantity": 150,
+    "ItemType": 0,
+    "Location": "Warehouse Rack 5",
+    "Seasonal": 1
+  },
+  {
+    "ItemId": 1013,
+    "Quantity": 60,
+    "ItemType": 2,
+    "Location": "Aisle 6, Shelf B",
+    "Seasonal": 0
+  },
+  {
+    "ItemId": 1014,
+    "Quantity": 55,
+    "ItemType": 4,
+    "Location": "Manager\u0027s Office",
+    "Seasonal": 0
+  },
+  {
+    "ItemId": 1015,
+    "Quantity": 210,
+    "ItemType": 0,
+    "Location": "Aisle 7, Shelf C",
+    "Seasonal": 2
+  },
+  {
+    "ItemId": 1016,
+    "Quantity": 34,
+    "ItemType": 3,
+    "Location": "Aisle 8, Shelf D",
+    "Seasonal": 3
+  },
+  {
+    "ItemId": 1017,
+    "Quantity": 77,
+    "ItemType": 1,
+    "Location": "Warehouse Rack 18",
+    "Seasonal": 0
+  },
+  {
+    "ItemId": 1018,
+    "Quantity": 19,
+    "ItemType": 2,
+    "Location": "Aisle 9, Shelf A",
+    "Seasonal": 1
+  },
+  {
+    "ItemId": 1019,
+    "Quantity": 400,
+    "ItemType": 0,
+    "Location": "Pallet 3",
+    "Seasonal": 0
+  },
+  {
+    "ItemId": 1020,
+    "Quantity": 52,
+    "ItemType": 4,
+    "Location": "Display Case 1",
+    "Seasonal": 0
+  },
+  {
+    "ItemId": 1021,
+    "Quantity": 90,
+    "ItemType": 1,
+    "Location": "Aisle 10, Shelf B",
+    "Seasonal": 2
+  },
+  {
+    "ItemId": 1022,
+    "Quantity": 55,
+    "ItemType": 2,
+    "Location": "Aisle 11, Shelf C",
+    "Seasonal": 3
+  },
+  {
+    "ItemId": 1023,
+    "Quantity": 130,
+    "ItemType": 0,
+    "Location": "Warehouse Rack 2",
+    "Seasonal": 0
+  },
+  {
+    "ItemId": 1024,
+    "Quantity": 42,
+    "ItemType": 3,
+    "Location": "Aisle 12, Shelf D",
+    "Seasonal": 1
+  },
+  {
+    "ItemId": 1025,
+    "Quantity": 58,
+    "ItemType": 1,
+    "Location": "Customer Service Desk",
+    "Seasonal": 0
+  },
+  {
+    "ItemId": 1026,
+    "Quantity": 315,
+    "ItemType": 0,
+    "Location": "Pallet 7",
+    "Seasonal": 2
+  },
+  {
+    "ItemId": 1027,
+    "Quantity": 68,
+    "ItemType": 2,
+    "Location": "Aisle 1, Shelf B",
+    "Seasonal": 0
+  },
+  {
+    "ItemId": 1028,
+    "Quantity": 64,
+    "ItemType": 4,
+    "Location": "Secure Storage Room",
+    "Seasonal": 0
+  },
+  {
+    "ItemId": 1029,
+    "Quantity": 275,
+    "ItemType": 0,
+    "Location": "Aisle 2, Shelf A",
+    "Seasonal": 3
+  },
+  {
+    "ItemId": 1030,
+    "Quantity": 95,
+    "ItemType": 3,
+    "Location": "Endcap 1",
+    "Seasonal": 1
+  },
+  {
+    "ItemId": 1031,
+    "Quantity": 22,
+    "ItemType": 1,
+    "Location": "Warehouse Rack 9",
+    "Seasonal": 0
+  },
+  {
+    "ItemId": 1032,
+    "Quantity": 180,
+    "ItemType": 2,
+    "Location": "Aisle 3, Shelf C",
+    "Seasonal": 2
+  },
+  {
+    "ItemId": 1033,
+    "Quantity": 500,
+    "ItemType": 0,
+    "Location": "Bulk Storage Area",
+    "Seasonal": 0
+  },
+  {
+    "ItemId": 1034,
+    "Quantity": 57,
+    "ItemType": 4,
+    "Location": "Display Case 2",
+    "Seasonal": 0
+  },
+  {
+    "ItemId": 1035,
+    "Quantity": 110,
+    "ItemType": 1,
+    "Location": "Aisle 4, Shelf D",
+    "Seasonal": 3
+  },
+  {
+    "ItemId": 1036,
+    "Quantity": 48,
+    "ItemType": 3,
+    "Location": "Aisle 5, Shelf B",
+    "Seasonal": 1
+  },
+  {
+    "ItemId": 1037,
+    "Quantity": 20,
+    "ItemType": 2,
+    "Location": "Warehouse Rack 14",
+    "Seasonal": 0
+  },
+  {
+    "ItemId": 1038,
+    "Quantity": 360,
+    "ItemType": 0,
+    "Location": "Pallet 12",
+    "Seasonal": 2
+  },
+  {
+    "ItemId": 1039,
+    "Quantity": 85,
+    "ItemType": 1,
+    "Location": "Aisle 6, Shelf A",
+    "Seasonal": 0
+  },
+  {
+    "ItemId": 1040,
+    "Quantity": 16,
+    "ItemType": 4,
+    "Location": "Receiving Bay",
+    "Seasonal": 0
+  },
+  {
+    "ItemId": 1041,
+    "Quantity": 230,
+    "ItemType": 0,
+    "Location": "Aisle 7, Shelf D",
+    "Seasonal": 3
+  },
+  {
+    "ItemId": 1042,
+    "Quantity": 62,
+    "ItemType": 2,
+    "Location": "Aisle 8, Shelf B",
+    "Seasonal": 1
+  },
+  {
+    "ItemId": 1043,
+    "Quantity": 53,
+    "ItemType": 3,
+    "Location": "Secure Storage Room",
+    "Seasonal": 0
+  },
+  {
+    "ItemId": 1044,
+    "Quantity": 145,
+    "ItemType": 1,
+    "Location": "Warehouse Rack 22",
+    "Seasonal": 2
+  },
+  {
+    "ItemId": 1045,
+    "Quantity": 99,
+    "ItemType": 0,
+    "Location": "Aisle 9, Shelf C",
+    "Seasonal": 0
+  },
+  {
+    "ItemId": 1046,
+    "Quantity": 28,
+    "ItemType": 2,
+    "Location": "Endcap 3",
+    "Seasonal": 3
+  },
+  {
+    "ItemId": 1047,
+    "Quantity": 410,
+    "ItemType": 0,
+    "Location": "Pallet 1",
+    "Seasonal": 1
+  },
+  {
+    "ItemId": 1048,
+    "Quantity": 61,
+    "ItemType": 4,
+    "Location": "Manager\u0027s Office",
+    "Seasonal": 0
+  },
+  {
+    "ItemId": 1049,
+    "Quantity": 75,
+    "ItemType": 3,
+    "Location": "Aisle 10, Shelf A",
+    "Seasonal": 2
+  },
+  {
+    "ItemId": 1050,
+    "Quantity": 195,
+    "ItemType": 1,
+    "Location": "Aisle 11, Shelf D",
+    "Seasonal": 0
+  },
+  {
+    "ItemId": 1051,
+    "Quantity": 51,
+    "ItemType": 6,
+    "Location": "Aisle 11, Shelf C",
+    "Seasonal": 0
+  }
+]
