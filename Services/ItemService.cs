@@ -38,14 +38,14 @@ public class ItemService : IItemService
             throw new ArgumentNullException(nameof(item), "Item cannot be null.");
         }
 
-        var ItemUpdate = _itemRepository.GetItemById(item.ItemId);
+        var itemUpdate = _itemRepository.GetItemById(item.ItemId);
         
-        if (ItemUpdate == null)
+        if (itemUpdate == null)
         {
             throw new ArgumentNullException(nameof(item), $"No item found with ID {item.ItemId}.");
         }
 
-        ItemUpdate.UpdateItem(item.ItemId, item.Quantity, item.ItemType, item.Location, item.Seasonal);
+        itemUpdate.UpdateItem(item.ItemId, item.Quantity, item.ItemType, item.Location, item.Seasonal);
     }
 
     public void RemoveItem(Item item)
