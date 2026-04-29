@@ -1,10 +1,11 @@
 ﻿using ITCS3112InventoryManagementSystem.Contracts;
+using ITCS3112InventoryManagementSystem.Domain;
 
 namespace ITCS3112InventoryManagementSystem.Services;
 
 public abstract class Notifier : INotifier
 {
-    public List <string> NotificationLog {get; set;} = new List<string>();
+    public List <NotificationMessage> NotificationLog {get; set;} = new List<NotificationMessage>();
     
     //child classes will use their own message
     public abstract void SendNotification(string message);
@@ -12,6 +13,6 @@ public abstract class Notifier : INotifier
     public void LogNotification(string message)
     {
         //sends message with current date/time
-        NotificationLog.Add($"[{DateTime.Now}] {message}");
+        NotificationLog.Add(new NotificationMessage(message));
     }
 }
