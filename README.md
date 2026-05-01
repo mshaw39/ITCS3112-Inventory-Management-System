@@ -26,6 +26,12 @@ A generic inventory management system that users can use to track item inventory
 | Pattern Name  | Category | File Name | Line Numbers | Rationale
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | Strategy  | Behavioral  | Notifier.cs  | 6-11  | Allows different notifier algorithms to be interchangable with each other at runtime.  |
+| Template  | Creational  | Notifier.cs  | 11  | Allows other service classes to override the abstract method.  |
+
+## SOLID Principles
+Our project made sure none of the primary SOLID principles were violated. One example is we segregated interfaces to make sure that classes do not implement methods that are not necessarily for it. The ICustomerService and IEmployeeService interfaces are separate, not allowing customers to access employee methods. Another example is the open/closed principle can be used if another notifier algorithm needed to be created. No existing code has to be updated, only a new interface and service class inheriting from the notifier template. 
+
+One area that could be factored to establish better principles is the UserService. Regular users might not necessarly need to remove/update other users and could be seen as a method for the ManagerService. 
 
 ## Individual Reflection
 **Matthew Shaw**
