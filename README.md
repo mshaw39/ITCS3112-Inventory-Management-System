@@ -17,6 +17,7 @@ A generic inventory management system that users can use to track item inventory
 | Interface  | IFileService.cs  | All  | Defines reading/saving operations for a json file that can be implemented in Program.cs.  |
 | Interface  | IItemRepository.cs  | All  | Defines the beginning CRUD operations for items to be implemented in its service class.  |
 | Polymorphism  | SMSNotifier.cs  | 5-9  | Overrides the abstract SendNotification method to produce the accurate notification type.  |
+| Polymorphism  | Program.cs  | 48-60  | User variable is dynamically assigned instances of derived classes (Manager, Employee, and/or Customer).  |
 | Struct  | NotificationMessage.cs  | 3-18  | Creates a notification message by putting a user's message together with the current date/time.  |
 | Enum  | ItemTypeEnum.cs  | All  | Defines the type of item that an item object can be.  |
 | Data Structure  | ItemRepository.cs  | 7  | Creates an item dictionary to store/retrieve items within the repository.  |
