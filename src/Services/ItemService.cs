@@ -1,10 +1,11 @@
 using ITCS3112InventoryManagementSystem.Contracts;
 using ITCS3112InventoryManagementSystem.Domain;
+using ITCS3112InventoryManagementSystem.Repositories;
 namespace ITCS3112InventoryManagementSystem.Services;
 
 public class ItemService : IItemService
 {
-    private readonly IItemRepository _itemRepository;
+    private readonly IItemRepository _itemRepository = ItemRepository.GetInstance();
 
     public ItemService(IItemRepository itemRepository)
     {
