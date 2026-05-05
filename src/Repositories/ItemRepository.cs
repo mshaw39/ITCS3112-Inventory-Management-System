@@ -4,12 +4,19 @@ namespace ITCS3112InventoryManagementSystem.Repositories;
 
 public class ItemRepository : IItemRepository
 {
+    private static ItemRepository _instance = null;
     private readonly Dictionary<int, Item> _items;
 
-    public ItemRepository()
+    private ItemRepository() {}
+
+    public static ItemRepository GetInstance()
     {
-        _items = new Dictionary<int, Item>();
-    }
+        if (_instance == null)
+        {
+            _instance = new ItemRepository();
+        }
+        return _instance;
+    }    
 
     public void AddItem(Item item)
     {

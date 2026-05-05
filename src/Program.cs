@@ -18,7 +18,7 @@ class Program
 
         // Initialize system requirements
         FileService fileService = new FileService();
-        IItemRepository itemRepository = new ItemRepository();
+        IItemRepository itemRepository = ItemRepository.GetInstance();
         IUserRepository userRepository = new UserRepository();
         
         IItemService itemService = new ItemService(itemRepository);
@@ -30,9 +30,9 @@ class Program
         ManagerService managerService = new ManagerService(userService, itemRepository); 
         
         // Read file and store to runtime inventory
-        Console.Write("\nEnter inventory file path (Press Enter for default '../../../Inventory/Inventory.json'): ");
+        Console.Write("\nEnter inventory file path (Press Enter for default '../../../docs/Inventory.json'): ");
         string? userInput = Console.ReadLine();
-        string filePath = string.IsNullOrWhiteSpace(userInput) ? "../../../Inventory/Inventory.json" : userInput;
+        string filePath = string.IsNullOrWhiteSpace(userInput) ? "../../../docs/Inventory.json" : userInput;
 
         List<Item> loadedItems = fileService.readFile(filePath);
         if (loadedItems != null)
