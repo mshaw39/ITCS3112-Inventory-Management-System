@@ -18,5 +18,5 @@ public interface ICustomerService
     /// The item is reserved for the customer if it is available; 
     /// otherwise, no changes are made to the <see cref="IItemRepository"/>.
     /// </remarks>
-    public void ReserveItem(Item item);
+    public void ReserveItem(int itemId, int quantityToReserve);
 }

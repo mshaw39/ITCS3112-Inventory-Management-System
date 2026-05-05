@@ -30,7 +30,7 @@ public interface IItemService
     /// Postconditions:
     /// The item is returned if found; otherwise, null.
     /// </remarks>
-    public Item? GetItem(Item item);
+    public Item? GetItem(int itemId);
 
     /// <summary>
     /// Lists all items from the <see cref="IItemRepository"/>.
@@ -66,5 +66,5 @@ public interface IItemService
     /// Postconditions:
     /// The item is removed if found; otherwise, no changes are made to the repository.
     /// </remarks>
-    public void RemoveItem(Item item);
+    public void RemoveItem(int itemId);
 }

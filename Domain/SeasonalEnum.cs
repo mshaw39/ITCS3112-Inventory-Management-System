@@ -2,7 +2,7 @@ namespace ITCS3112InventoryManagementSystem.Domain;
 
 public enum SeasonalEnum
 {
-    None,
+    Default,
     Halloween,
     Easter,
     NewYears,

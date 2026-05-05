@@ -1,27 +1,31 @@
 [
   {
     "ItemId": 1001,
+    "Name": "2x4 Pine Board 8ft",
     "Quantity": 50,
-    "ItemType": 0,
+    "ItemType": 1,
     "Location": "Aisle 4, Shelf B",
     "Seasonal": 0
   },
   {
     "ItemId": 1002,
+    "Name": "Copper Pipe 1/2 in",
     "Quantity": 15,
-    "ItemType": 1,
+    "ItemType": 10,
     "Location": "Warehouse Rack 12",
-    "Seasonal": 2
+    "Seasonal": 0
   },
   {
     "ItemId": 1003,
+    "Name": "Makita Power Drill",
     "Quantity": 200,
-    "ItemType": 0,
+    "ItemType": 6,
     "Location": "Front Display Bin",
-    "Seasonal": 1
+    "Seasonal": 0
   },
   {
     "ItemId": 1004,
+    "Name": "LED Ceiling Troffer",
     "Quantity": 58,
     "ItemType": 3,
     "Location": "Secure Storage Room",
@@ -29,13 +33,15 @@
   },
   {
     "ItemId": 1005,
+    "Name": "14/2 Romex Wire 250ft",
     "Quantity": 120,
     "ItemType": 2,
     "Location": "Aisle 1, Shelf A",
-    "Seasonal": 3
+    "Seasonal": 0
   },
   {
     "ItemId": 1006,
+    "Name": "Plywood Sheet 4x8",
     "Quantity": 45,
     "ItemType": 1,
     "Location": "Aisle 2, Shelf C",
@@ -43,20 +49,23 @@
   },
   {
     "ItemId": 1007,
+    "Name": "Oak Hardwood Planks",
     "Quantity": 50,
     "ItemType": 4,
     "Location": "Receiving Bay",
-    "Seasonal": 1
+    "Seasonal": 0
   },
   {
     "ItemId": 1008,
-    "Quantity": 300,
+    "Name": "Stainless Steel Fridge",
+    "Quantity": 12,
     "ItemType": 0,
     "Location": "Bulk Storage Area",
-    "Seasonal": 2
+    "Seasonal": 0
   },
   {
     "ItemId": 1009,
+    "Name": "Breaker Panel 200A",
     "Quantity": 25,
     "ItemType": 2,
     "Location": "Aisle 3, Shelf D",
@@ -64,13 +73,15 @@
   },
   {
     "ItemId": 1010,
+    "Name": "Pendant Light Fixture",
     "Quantity": 88,
     "ItemType": 3,
     "Location": "Endcap 4",
-    "Seasonal": 3
+    "Seasonal": 0
   },
   {
     "ItemId": 1011,
+    "Name": "Treated Deck Post 4x4",
     "Quantity": 62,
     "ItemType": 1,
     "Location": "Aisle 5, Shelf A",
@@ -78,13 +89,15 @@
   },
   {
     "ItemId": 1012,
-    "Quantity": 150,
+    "Name": "Gas Range Stove",
+    "Quantity": 8,
     "ItemType": 0,
     "Location": "Warehouse Rack 5",
-    "Seasonal": 1
+    "Seasonal": 0
   },
   {
     "ItemId": 1013,
+    "Name": "GFCI Outlet 15A",
     "Quantity": 60,
     "ItemType": 2,
     "Location": "Aisle 6, Shelf B",
@@ -92,48 +105,55 @@
   },
   {
     "ItemId": 1014,
+    "Name": "Vinyl Click Flooring",
     "Quantity": 55,
     "ItemType": 4,
-    "Location": "Manager\u0027s Office",
+    "Location": "Aisle 7, Shelf A",
     "Seasonal": 0
   },
   {
     "ItemId": 1015,
-    "Quantity": 210,
-    "ItemType": 0,
-    "Location": "Aisle 7, Shelf C",
-    "Seasonal": 2
+    "Name": "Subaru Impreza 2020 Oil Filter",
+    "Quantity": 35,
+    "ItemType": 5,
+    "Location": "Aisle 8, Shelf C",
+    "Seasonal": 0
   },
   {
     "ItemId": 1016,
-    "Quantity": 34,
-    "ItemType": 3,
-    "Location": "Aisle 8, Shelf D",
-    "Seasonal": 3
+    "Name": "Subaru Impreza 2020 Spark Plugs",
+    "Quantity": 80,
+    "ItemType": 5,
+    "Location": "Aisle 8, Shelf C",
+    "Seasonal": 0
   },
   {
     "ItemId": 1017,
-    "Quantity": 77,
-    "ItemType": 1,
+    "Name": "Carrier Weathermaker 8000vs Igniter",
+    "Quantity": 15,
+    "ItemType": 11,
     "Location": "Warehouse Rack 18",
     "Seasonal": 0
   },
   {
     "ItemId": 1018,
-    "Quantity": 19,
-    "ItemType": 2,
-    "Location": "Aisle 9, Shelf A",
-    "Seasonal": 1
+    "Name": "Carrier Weathermaker Gas Valve",
+    "Quantity": 10,
+    "ItemType": 11,
+    "Location": "Warehouse Rack 18",
+    "Seasonal": 0
   },
   {
     "ItemId": 1019,
-    "Quantity": 400,
+    "Name": "Dishwasher",
+    "Quantity": 64,
     "ItemType": 0,
     "Location": "Pallet 3",
     "Seasonal": 0
   },
   {
     "ItemId": 1020,
+    "Name": "Porcelain Tile Case",
     "Quantity": 52,
     "ItemType": 4,
     "Location": "Display Case 1",
@@ -141,48 +161,55 @@
   },
   {
     "ItemId": 1021,
+    "Name": "Cedar Fence Picket",
     "Quantity": 90,
     "ItemType": 1,
     "Location": "Aisle 10, Shelf B",
-    "Seasonal": 2
+    "Seasonal": 0
   },
   {
     "ItemId": 1022,
+    "Name": "Wire Nuts (Pack of 100)",
     "Quantity": 55,
     "ItemType": 2,
     "Location": "Aisle 11, Shelf C",
-    "Seasonal": 3
+    "Seasonal": 0
   },
   {
     "ItemId": 1023,
-    "Quantity": 130,
+    "Name": "Microwave Oven",
+    "Quantity": 22,
     "ItemType": 0,
     "Location": "Warehouse Rack 2",
     "Seasonal": 0
   },
   {
     "ItemId": 1024,
-    "Quantity": 42,
+    "Name": "Chandelier Fixture",
+    "Quantity": 12,
     "ItemType": 3,
     "Location": "Aisle 12, Shelf D",
-    "Seasonal": 1
+    "Seasonal": 0
   },
   {
     "ItemId": 1025,
-    "Quantity": 58,
-    "ItemType": 1,
-    "Location": "Customer Service Desk",
+    "Name": "Drywall Sheet 1/2 in",
+    "Quantity": 150,
+    "ItemType": 7,
+    "Location": "Bulk Storage",
     "Seasonal": 0
   },
   {
     "ItemId": 1026,
-    "Quantity": 315,
-    "ItemType": 0,
+    "Name": "Fiberglass Insulation",
+    "Quantity": 85,
+    "ItemType": 7,
     "Location": "Pallet 7",
-    "Seasonal": 2
+    "Seasonal": 0
   },
   {
     "ItemId": 1027,
+    "Name": "Conduit Pipe 10ft",
     "Quantity": 68,
     "ItemType": 2,
     "Location": "Aisle 1, Shelf B",
@@ -190,6 +217,7 @@
   },
   {
     "ItemId": 1028,
+    "Name": "Laminate Flooring Case",
     "Quantity": 64,
     "ItemType": 4,
     "Location": "Secure Storage Room",
@@ -197,76 +225,87 @@
   },
   {
     "ItemId": 1029,
-    "Quantity": 275,
-    "ItemType": 0,
+    "Name": "Kitchen Sink Basin",
+    "Quantity": 18,
+    "ItemType": 10,
     "Location": "Aisle 2, Shelf A",
-    "Seasonal": 3
+    "Seasonal": 0
   },
   {
     "ItemId": 1030,
+    "Name": "LED Work Light",
     "Quantity": 95,
     "ItemType": 3,
     "Location": "Endcap 1",
-    "Seasonal": 1
+    "Seasonal": 0
   },
   {
     "ItemId": 1031,
-    "Quantity": 22,
+    "Name": "OSB Board 7/16 in",
+    "Quantity": 120,
     "ItemType": 1,
     "Location": "Warehouse Rack 9",
     "Seasonal": 0
   },
   {
     "ItemId": 1032,
+    "Name": "Light Switch Plate",
     "Quantity": 180,
     "ItemType": 2,
     "Location": "Aisle 3, Shelf C",
-    "Seasonal": 2
+    "Seasonal": 0
   },
   {
     "ItemId": 1033,
-    "Quantity": 500,
-    "ItemType": 0,
+    "Name": "Garbage Disposal Unit",
+    "Quantity": 35,
+    "ItemType": 10,
     "Location": "Bulk Storage Area",
     "Seasonal": 0
   },
   {
     "ItemId": 1034,
-    "Quantity": 57,
+    "Name": "Carpet Roll 12ft",
+    "Quantity": 14,
     "ItemType": 4,
     "Location": "Display Case 2",
     "Seasonal": 0
   },
   {
     "ItemId": 1035,
+    "Name": "Shiplap Board",
     "Quantity": 110,
     "ItemType": 1,
     "Location": "Aisle 4, Shelf D",
-    "Seasonal": 3
+    "Seasonal": 0
   },
   {
     "ItemId": 1036,
+    "Name": "Recessed Lighting Kit",
     "Quantity": 48,
     "ItemType": 3,
     "Location": "Aisle 5, Shelf B",
-    "Seasonal": 1
+    "Seasonal": 0
   },
   {
     "ItemId": 1037,
-    "Quantity": 20,
+    "Name": "Circuit Breaker 15A",
+    "Quantity": 200,
     "ItemType": 2,
     "Location": "Warehouse Rack 14",
     "Seasonal": 0
   },
   {
     "ItemId": 1038,
+    "Name": "HVAC Air Filter 20x20",
     "Quantity": 360,
-    "ItemType": 0,
+    "ItemType": 11,
     "Location": "Pallet 12",
-    "Seasonal": 2
+    "Seasonal": 0
   },
   {
     "ItemId": 1039,
+    "Name": "MDF Trim Moulding",
     "Quantity": 85,
     "ItemType": 1,
     "Location": "Aisle 6, Shelf A",
@@ -274,27 +313,31 @@
   },
   {
     "ItemId": 1040,
-    "Quantity": 16,
+    "Name": "Grout Bag 25lb",
+    "Quantity": 60,
     "ItemType": 4,
     "Location": "Receiving Bay",
     "Seasonal": 0
   },
   {
     "ItemId": 1041,
+    "Name": "PVC Pipe 2in",
     "Quantity": 230,
-    "ItemType": 0,
+    "ItemType": 10,
     "Location": "Aisle 7, Shelf D",
-    "Seasonal": 3
+    "Seasonal": 0
   },
   {
     "ItemId": 1042,
-    "Quantity": 62,
+    "Name": "Electrical Tape Roll",
+    "Quantity": 150,
     "ItemType": 2,
     "Location": "Aisle 8, Shelf B",
-    "Seasonal": 1
+    "Seasonal": 0
   },
   {
     "ItemId": 1043,
+    "Name": "Outdoor Flood Light",
     "Quantity": 53,
     "ItemType": 3,
     "Location": "Secure Storage Room",
@@ -302,58 +345,474 @@
   },
   {
     "ItemId": 1044,
+    "Name": "Pressure Treated 2x6",
     "Quantity": 145,
     "ItemType": 1,
     "Location": "Warehouse Rack 22",
-    "Seasonal": 2
+    "Seasonal": 0
   },
   {
     "ItemId": 1045,
-    "Quantity": 99,
+    "Name": "Kitchen Range Hood",
+    "Quantity": 15,
     "ItemType": 0,
     "Location": "Aisle 9, Shelf C",
     "Seasonal": 0
   },
   {
     "ItemId": 1046,
+    "Name": "Extension Cord 50ft",
     "Quantity": 28,
     "ItemType": 2,
     "Location": "Endcap 3",
-    "Seasonal": 3
+    "Seasonal": 0
   },
   {
     "ItemId": 1047,
-    "Quantity": 410,
-    "ItemType": 0,
+    "Name": "Toilet Bowl Unit",
+    "Quantity": 24,
+    "ItemType": 10,
     "Location": "Pallet 1",
-    "Seasonal": 1
+    "Seasonal": 0
   },
   {
     "ItemId": 1048,
+    "Name": "Hardwood Floor Adhesive",
     "Quantity": 61,
     "ItemType": 4,
-    "Location": "Manager\u0027s Office",
+    "Location": "Aisle 12, Shelf A",
     "Seasonal": 0
   },
   {
     "ItemId": 1049,
-    "Quantity": 75,
-    "ItemType": 3,
+    "Name": "Vanity Mirror",
+    "Quantity": 35,
+    "ItemType": 13,
     "Location": "Aisle 10, Shelf A",
-    "Seasonal": 2
+    "Seasonal": 0
   },
   {
     "ItemId": 1050,
+    "Name": "Roofing Shingles Bundle",
     "Quantity": 195,
-    "ItemType": 1,
+    "ItemType": 7,
     "Location": "Aisle 11, Shelf D",
     "Seasonal": 0
   },
   {
     "ItemId": 1051,
-    "Quantity": 11,
+    "Name": "DeWalt Table Saw",
+    "Quantity": 62,
     "ItemType": 6,
     "Location": "Aisle 11, Shelf C",
     "Seasonal": 0
+  },
+  {
+    "ItemId": 1052,
+    "Name": "Bag of Candy Corn",
+    "Quantity": 150,
+    "ItemType": 13,
+    "Location": "Endcap 1",
+    "Seasonal": 1
+  },
+  {
+    "ItemId": 1053,
+    "Name": "Plastic Skeleton 5ft",
+    "Quantity": 30,
+    "ItemType": 13,
+    "Location": "Aisle 9",
+    "Seasonal": 1
+  },
+  {
+    "ItemId": 1054,
+    "Name": "Foam Tombstone",
+    "Quantity": 75,
+    "ItemType": 13,
+    "Location": "Aisle 9",
+    "Seasonal": 1
+  },
+  {
+    "ItemId": 1055,
+    "Name": "Spider Webting Setup",
+    "Quantity": 120,
+    "ItemType": 13,
+    "Location": "Endcap 2",
+    "Seasonal": 1
+  },
+  {
+    "ItemId": 1056,
+    "Name": "Pumpkin Carving Kit",
+    "Quantity": 200,
+    "ItemType": 6,
+    "Location": "Front Display",
+    "Seasonal": 1
+  },
+  {
+    "ItemId": 1057,
+    "Name": "LED Christmas Lights",
+    "Quantity": 300,
+    "ItemType": 3,
+    "Location": "Aisle 12",
+    "Seasonal": 4
+  },
+  {
+    "ItemId": 1058,
+    "Name": "Artificial Pine Tree 7ft",
+    "Quantity": 45,
+    "ItemType": 13,
+    "Location": "Display 2",
+    "Seasonal": 4
+  },
+  {
+    "ItemId": 1059,
+    "Name": "Glass Ornaments Set",
+    "Quantity": 150,
+    "ItemType": 13,
+    "Location": "Aisle 12",
+    "Seasonal": 4
+  },
+  {
+    "ItemId": 1060,
+    "Name": "Outdoor Reindeer Light",
+    "Quantity": 20,
+    "ItemType": 3,
+    "Location": "Aisle 12",
+    "Seasonal": 4
+  },
+  {
+    "ItemId": 1061,
+    "Name": "Wrapping Paper Roll",
+    "Quantity": 400,
+    "ItemType": 13,
+    "Location": "Front Display",
+    "Seasonal": 4
+  },
+  {
+    "ItemId": 1062,
+    "Name": "Heart-Shaped Chocolates",
+    "Quantity": 80,
+    "ItemType": 13,
+    "Location": "Register 1",
+    "Seasonal": 6
+  },
+  {
+    "ItemId": 1063,
+    "Name": "Red Rose Bouquet (Fake)",
+    "Quantity": 60,
+    "ItemType": 13,
+    "Location": "Endcap 1",
+    "Seasonal": 6
+  },
+  {
+    "ItemId": 1064,
+    "Name": "Teddy Bear Medium",
+    "Quantity": 45,
+    "ItemType": 13,
+    "Location": "Aisle 9",
+    "Seasonal": 6
+  },
+  {
+    "ItemId": 1065,
+    "Name": "Valentines Greeting Cards",
+    "Quantity": 250,
+    "ItemType": 13,
+    "Location": "Register 2",
+    "Seasonal": 6
+  },
+  {
+    "ItemId": 1066,
+    "Name": "Pink LED Fairy Lights",
+    "Quantity": 100,
+    "ItemType": 3,
+    "Location": "Endcap 3",
+    "Seasonal": 6
+  },
+  {
+    "ItemId": 1067,
+    "Name": "Fireworks Assortment Box",
+    "Quantity": 120,
+    "ItemType": 13,
+    "Location": "Secure Storage",
+    "Seasonal": 5
+  },
+  {
+    "ItemId": 1068,
+    "Name": "American Flag 3x5",
+    "Quantity": 200,
+    "ItemType": 13,
+    "Location": "Front Display",
+    "Seasonal": 5
+  },
+  {
+    "ItemId": 1069,
+    "Name": "Sparklers Pack",
+    "Quantity": 300,
+    "ItemType": 13,
+    "Location": "Register 1",
+    "Seasonal": 5
+  },
+  {
+    "ItemId": 1070,
+    "Name": "Patriotic Bunting",
+    "Quantity": 80,
+    "ItemType": 13,
+    "Location": "Aisle 9",
+    "Seasonal": 5
+  },
+  {
+    "ItemId": 1071,
+    "Name": "Charcoal Briquettes 20lb",
+    "Quantity": 150,
+    "ItemType": 8,
+    "Location": "Pallet 4",
+    "Seasonal": 5
+  },
+  {
+    "ItemId": 1072,
+    "Name": "Inflatable Pool",
+    "Quantity": 25,
+    "ItemType": 8,
+    "Location": "Bulk Storage",
+    "Seasonal": 7
+  },
+  {
+    "ItemId": 1073,
+    "Name": "Sunscreen SPF 50",
+    "Quantity": 120,
+    "ItemType": 13,
+    "Location": "Register 3",
+    "Seasonal": 7
+  },
+  {
+    "ItemId": 1074,
+    "Name": "Beach Towel",
+    "Quantity": 90,
+    "ItemType": 13,
+    "Location": "Endcap 4",
+    "Seasonal": 7
+  },
+  {
+    "ItemId": 1075,
+    "Name": "Patio Umbrella",
+    "Quantity": 40,
+    "ItemType": 8,
+    "Location": "Aisle 13",
+    "Seasonal": 7
+  },
+  {
+    "ItemId": 1076,
+    "Name": "Water Gun",
+    "Quantity": 150,
+    "ItemType": 13,
+    "Location": "Aisle 9",
+    "Seasonal": 7
+  },
+  {
+    "ItemId": 1077,
+    "Name": "Snow Shovel",
+    "Quantity": 60,
+    "ItemType": 6,
+    "Location": "Aisle 2",
+    "Seasonal": 9
+  },
+  {
+    "ItemId": 1078,
+    "Name": "Ice Melt Bag 50lb",
+    "Quantity": 200,
+    "ItemType": 8,
+    "Location": "Pallet 2",
+    "Seasonal": 9
+  },
+  {
+    "ItemId": 1079,
+    "Name": "Windshield Ice Scraper",
+    "Quantity": 180,
+    "ItemType": 6,
+    "Location": "Endcap 1",
+    "Seasonal": 9
+  },
+  {
+    "ItemId": 1080,
+    "Name": "Space Heater 1500W",
+    "Quantity": 85,
+    "ItemType": 11,
+    "Location": "Aisle 12",
+    "Seasonal": 9
+  },
+  {
+    "ItemId": 1081,
+    "Name": "Weather Stripping Roll",
+    "Quantity": 140,
+    "ItemType": 5,
+    "Location": "Aisle 5",
+    "Seasonal": 9
+  },
+  {
+    "ItemId": 1082,
+    "Name": "Easter Egg Dye Kit",
+    "Quantity": 200,
+    "ItemType": 13,
+    "Location": "Endcap 3",
+    "Seasonal": 2
+  },
+  {
+    "ItemId": 1083,
+    "Name": "Plastic Easter Eggs (50ct)",
+    "Quantity": 300,
+    "ItemType": 13,
+    "Location": "Aisle 9",
+    "Seasonal": 2
+  },
+  {
+    "ItemId": 1084,
+    "Name": "Chocolate Bunny",
+    "Quantity": 150,
+    "ItemType": 13,
+    "Location": "Register 1",
+    "Seasonal": 2
+  },
+  {
+    "ItemId": 1085,
+    "Name": "Wicker Easter Basket",
+    "Quantity": 90,
+    "ItemType": 13,
+    "Location": "Display 1",
+    "Seasonal": 2
+  },
+  {
+    "ItemId": 1086,
+    "Name": "Fake Green Grass (Bag)",
+    "Quantity": 120,
+    "ItemType": 13,
+    "Location": "Aisle 9",
+    "Seasonal": 2
+  },
+  {
+    "ItemId": 1087,
+    "Name": "Leaf Rake",
+    "Quantity": 110,
+    "ItemType": 6,
+    "Location": "Aisle 2",
+    "Seasonal": 8
+  },
+  {
+    "ItemId": 1088,
+    "Name": "Lawn Refuse Bags (30ct)",
+    "Quantity": 250,
+    "ItemType": 8,
+    "Location": "Aisle 2",
+    "Seasonal": 8
+  },
+  {
+    "ItemId": 1089,
+    "Name": "Fire Pit Ring",
+    "Quantity": 30,
+    "ItemType": 8,
+    "Location": "Aisle 13",
+    "Seasonal": 8
+  },
+  {
+    "ItemId": 1090,
+    "Name": "Gutter Guards",
+    "Quantity": 160,
+    "ItemType": 7,
+    "Location": "Aisle 5",
+    "Seasonal": 8
+  },
+  {
+    "ItemId": 1091,
+    "Name": "Pumpkin Spice Air Freshener",
+    "Quantity": 90,
+    "ItemType": 13,
+    "Location": "Register 2",
+    "Seasonal": 8
+  },
+  {
+    "ItemId": 1092,
+    "Name": "Party Poppers Pack",
+    "Quantity": 200,
+    "ItemType": 13,
+    "Location": "Endcap 4",
+    "Seasonal": 3
+  },
+  {
+    "ItemId": 1093,
+    "Name": "2027 Calendar",
+    "Quantity": 150,
+    "ItemType": 13,
+    "Location": "Register 1",
+    "Seasonal": 3
+  },
+  {
+    "ItemId": 1094,
+    "Name": "Plastic Champagne Flutes",
+    "Quantity": 120,
+    "ItemType": 13,
+    "Location": "Aisle 9",
+    "Seasonal": 3
+  },
+  {
+    "ItemId": 1095,
+    "Name": "New Years Hat Assortment",
+    "Quantity": 80,
+    "ItemType": 13,
+    "Location": "Front Display",
+    "Seasonal": 3
+  },
+  {
+    "ItemId": 1096,
+    "Name": "Confetti Cannon",
+    "Quantity": 100,
+    "ItemType": 13,
+    "Location": "Endcap 2",
+    "Seasonal": 3
+  },
+  {
+    "ItemId": 1097,
+    "Name": "Garden Hose 50ft",
+    "Quantity": 130,
+    "ItemType": 8,
+    "Location": "Aisle 2",
+    "Seasonal": 10
+  },
+  {
+    "ItemId": 1098,
+    "Name": "Miracle-Gro Potting Soil",
+    "Quantity": 250,
+    "ItemType": 8,
+    "Location": "Pallet 5",
+    "Seasonal": 10
+  },
+  {
+    "ItemId": 1099,
+    "Name": "Grass Seed Mix 10lb",
+    "Quantity": 180,
+    "ItemType": 8,
+    "Location": "Aisle 2",
+    "Seasonal": 10
+  },
+  {
+    "ItemId": 1100,
+    "Name": "Bird Feeder",
+    "Quantity": 65,
+    "ItemType": 8,
+    "Location": "Aisle 13",
+    "Seasonal": 10
+  },
+  {
+    "ItemId": 1101,
+    "Name": "Pruning Shears",
+    "Quantity": 90,
+    "ItemType": 6,
+    "Location": "Aisle 2",
+    "Seasonal": 10
+  },
+  {
+    "ItemId": 1999,
+    "Name": "EggBasket",
+    "Quantity": 60,
+    "ItemType": 13,
+    "Location": "Aisle 3, Bay 15",
+    "Seasonal": 2
   }
 ]

@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Text.Json;
 using ITCS3112InventoryManagementSystem.Contracts;
 using ITCS3112InventoryManagementSystem.Domain;
 
@@ -9,13 +11,53 @@ public class ManagerService : IManagerService
 {
     private readonly UserService _userService;
     private readonly IItemRepository _itemRepository;
-    private readonly HashSet<int> _activeAutoOrders; 
+    private HashSet<int> _activeAutoOrders; 
+    
+    // Path for Auto-Orders persistence
+    private readonly string _autoOrderFilePath = "../../../Inventory/AutoOrders.json";
 
     public ManagerService(UserService userService, IItemRepository itemRepository)
     {
         _userService = userService;
         _itemRepository = itemRepository;
         _activeAutoOrders = new HashSet<int>();
+        LoadAutoOrders(); // Load from file on startup
+    }
+
+    private void LoadAutoOrders()
+    {
+        try
+        {
+            if (File.Exists(_autoOrderFilePath))
+            {
+                string json = File.ReadAllText(_autoOrderFilePath);
+                _activeAutoOrders = JsonSerializer.Deserialize<HashSet<int>>(json) ?? new HashSet<int>();
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[Warning] Could not load AutoOrders.json: {ex.Message}");
+            _activeAutoOrders = new HashSet<int>();
+        }
+    }
+
+    private void SaveAutoOrders()
+    {
+        try
+        {
+            string? directoryPath = Path.GetDirectoryName(_autoOrderFilePath);
+            if (!string.IsNullOrWhiteSpace(directoryPath) && !Directory.Exists(directoryPath))
+            {
+                Directory.CreateDirectory(directoryPath);
+            }
+
+            string json = JsonSerializer.Serialize(_activeAutoOrders, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(_autoOrderFilePath, json);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[Error] Could not save AutoOrders.json: {ex.Message}");
+        }
     }
 
     public void AutoOrder(int orderId)
@@ -23,6 +65,7 @@ public class ManagerService : IManagerService
         if (_activeAutoOrders.Add(orderId))
         {
             Console.WriteLine($"[ManagerService] Auto-order for Item #{orderId} activated.");
+            SaveAutoOrders(); // Save changes immediately
         }
         else
         {
@@ -40,6 +83,7 @@ public class ManagerService : IManagerService
         if (_activeAutoOrders.Remove(orderId))
         {
             Console.WriteLine($"[ManagerService] Auto-order for Item #{orderId} has been deactivated.");
+            SaveAutoOrders(); // Save changes immediately
         }
         else
         {

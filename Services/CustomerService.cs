@@ -8,33 +8,35 @@ public class CustomerService : ICustomerService
     private readonly UserService _userService;
     private readonly IItemRepository _itemRepository; 
 
-   
     public CustomerService(UserService userService, IItemRepository itemRepository)
     {
         _userService = userService;
         _itemRepository = itemRepository;
     }
 
-    public void ReserveItem(Item item)
+    public void ReserveItem(int itemId, int quantityToReserve)
     {
-       
-        if (item == null)
+        if (quantityToReserve <= 0)
         {
-            Console.WriteLine("[CustomerService] Error: Item cannot be null.");
+            Console.WriteLine("[CustomerService] Error: Reservation quantity must be greater than zero.");
             return;
         }
 
-        Item? repoItem = _itemRepository.GetItemById(item.ItemId);
+        Item? repoItem = _itemRepository.GetItemById(itemId);
         
-        // Check if item exists and is in stock
-        if (repoItem != null && repoItem.Quantity > 0)
+        // Check if item exists and has ENOUGH stock
+        if (repoItem != null && repoItem.Quantity >= quantityToReserve)
         {
-            repoItem.Quantity -= 1; // Reserving reduces available stock by 1
-            Console.WriteLine($"[CustomerService] Success: Reserved 1x {repoItem.ItemType} (ID: {repoItem.ItemId}). Remaining stock: {repoItem.Quantity}");
+            repoItem.Quantity -= quantityToReserve; 
+            Console.WriteLine($"[CustomerService] Success: Reserved {quantityToReserve}x '{repoItem.Name}' (ID: {repoItem.ItemId}). Remaining stock: {repoItem.Quantity}");
+        }
+        else if (repoItem != null)
+        {
+            Console.WriteLine($"[CustomerService] Failed: Not enough stock for '{repoItem.Name}'. Requested: {quantityToReserve}, Available: {repoItem.Quantity}");
         }
         else
         {
-            Console.WriteLine($"[CustomerService] Failed: Item ID {item.ItemId} is either out of stock or does not exist.");
+            Console.WriteLine($"[CustomerService] Failed: Item ID {itemId} does not exist.");
         }
     }
 }

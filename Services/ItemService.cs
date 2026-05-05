@@ -16,14 +16,9 @@ public class ItemService : IItemService
         _itemRepository.AddItem(item);
     }
 
-    public Item? GetItem(Item item)
+    public Item? GetItem(int itemId)
     {
-        if (item == null)
-        {
-            throw new ArgumentNullException(nameof(item), "Item cannot be null.");
-        }
-
-        return _itemRepository.GetItemById(item.ItemId);
+        return _itemRepository.GetItemById(itemId);
     }
 
     public List<Item> ListAllItems()
@@ -45,16 +40,11 @@ public class ItemService : IItemService
             throw new ArgumentNullException(nameof(item), $"No item found with ID {item.ItemId}.");
         }
 
-        itemUpdate.UpdateItem(item.ItemId, item.Quantity, item.ItemType, item.Location, item.Seasonal);
+        itemUpdate.UpdateItem(item.ItemId, item.Name, item.Quantity, item.ItemType, item.Location, item.Seasonal);
     }
 
-    public void RemoveItem(Item item)
+    public void RemoveItem(int itemId)
     {
-        if (item == null)
-        {
-            throw new ArgumentNullException(nameof(item), "Item cannot be null.");
-        }
-        
-        _itemRepository.RemoveItemById(item.ItemId);
+        _itemRepository.RemoveItemById(itemId);
     }
 }
