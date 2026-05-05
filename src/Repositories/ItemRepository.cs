@@ -1,29 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using ITCS3112InventoryManagementSystem.Contracts;
 using ITCS3112InventoryManagementSystem.Domain;
+
 namespace ITCS3112InventoryManagementSystem.Repositories;
 
 public class ItemRepository : IItemRepository
 {
-    private static ItemRepository _instance = null;
     private readonly Dictionary<int, Item> _items;
 
-    private ItemRepository() {}
-
-    public static ItemRepository GetInstance()
+    public ItemRepository()
     {
-        if (_instance == null)
-        {
-            _instance = new ItemRepository();
-        }
-        return _instance;
-    }    
+        // THIS IS THE LINE THAT GOT DELETED IN THE MERGE
+        _items = new Dictionary<int, Item>();
+    }
 
     public void AddItem(Item item)
     {
         if (item == null)
         {
             throw new ArgumentNullException(nameof(item), "Item cannot be null.");
-        } else if (_items.ContainsKey(item.ItemId))
+        } 
+        else if (_items.ContainsKey(item.ItemId)) // <--- Line 26 was crashing right here because _items was null
         {
             throw new ArgumentException($"An item with ID {item.ItemId} already exists.");
         }

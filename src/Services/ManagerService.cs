@@ -13,8 +13,8 @@ public class ManagerService : IManagerService
     private readonly IItemRepository _itemRepository;
     private HashSet<int> _activeAutoOrders; 
     
-    // Path for Auto-Orders persistence
-    private readonly string _autoOrderFilePath = "../../../Inventory/AutoOrders.json";
+    // CORRECTED PATH: Goes up 3 levels to the root, then into the docs folder
+    private readonly string _autoOrderFilePath = "../../../docs/AutoOrders.json";
 
     public ManagerService(UserService userService, IItemRepository itemRepository)
     {

@@ -810,7 +810,7 @@
   {
     "ItemId": 1999,
     "Name": "EggBasket",
-    "Quantity": 60,
+    "Quantity": 40,
     "ItemType": 13,
     "Location": "Aisle 3, Bay 15",
     "Seasonal": 2
