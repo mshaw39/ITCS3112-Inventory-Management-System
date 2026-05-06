@@ -2,11 +2,13 @@
 A generic inventory management system that users can use to track item inventory from a JSON file.
 
 ## Build/Run Instructions
-1) Press the run button to build/run the project.
-2) A new terminal will run. The user will be prompted to enter a json file path (default json/file path is available).
-3) User will choose what user/role they would like to login to.
-4) The main menu under that user will become available to perform the necessary tasks as necessary. 
-5) When finished, the user can save their changes to the json file and exit the program.
+**Required Version:** net10.0
+1) Load the project using your desired IDE (JetBrains Rider for best results).
+2) Press the run button on `Program.cs` to build/run the project.
+3) A new terminal will run. The user will be prompted to enter a json file path (default json/file path is available).
+4) User will choose what user/role they would like to login to.
+5) The main menu under that user will become available to perform the necessary tasks as necessary. 
+6) When finished, the user can save their changes to the json file and exit the program.
 
 ## OOP Feature Documentation
 | OOP Feature  | File Name | Line Numbers | Reasoning/Purpose
@@ -15,9 +17,10 @@ A generic inventory management system that users can use to track item inventory
 | Inheritance  | Manager.cs  | 3-9  | Manager inherits from User, sharing its main attributes, but changing the status value.  |
 | Interface  | IUserService.cs  | All  | Defines CRUD operations for users to be implemented by other classes.  |
 | Interface  | IFileService.cs  | All  | Defines reading/saving operations for a json file that can be implemented in Program.cs.  |
-| Interface  | IItemRepository.cs  | All  | Defines the beginning CRUD operations for items to be implemented in its service class.  |
+| Interface  | IItemRepository.cs  | All  | Defines CRUD operations for items to be implemented in its service class.  |
 | Polymorphism  | SMSNotifier.cs  | 5-9  | Overrides the abstract SendNotification method to produce the accurate notification type.  |
-| Polymorphism  | Program.cs  | 48-60  | User variable is dynamically assigned instances of derived classes (Manager, Employee, and/or Customer).  |
+| Polymorphism  | Program.cs  | 48-54  | User objects are assigned instances of derived classes at runtime (Manager, Employee, and Customer).  |
+| Access Modifiers  | OrderService.cs  | All  | The class is public to allow other classes interaction with the OrderService class when necessary. _notifier is private readonly since only the OrderService class should be reading the information from the Notifier service class, when calling upon the OrderService class.  |
 | Struct  | NotificationMessage.cs  | 3-18  | Creates a notification message by putting a user's message together with the current date/time.  |
 | Enum  | ItemTypeEnum.cs  | All  | Defines the type of item that an item object can be.  |
 | Data Structure  | ItemRepository.cs  | 7  | Creates an item dictionary to store/retrieve items within the repository.  |
@@ -27,32 +30,25 @@ A generic inventory management system that users can use to track item inventory
 | Pattern Name  | Category | File Name | Line Numbers | Rationale
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | Strategy  | Behavioral  | Notifier.cs  | 6-11  | Allows different notifier algorithms to be interchangable with each other at runtime.  |
-| Template  | Creational  | Notifier.cs  | 11  | Allows other service classes to override the abstract method.  |
+| Template  | Behavioral  | Notifier.cs  | 11  | Allows other service classes to override the abstract method.  |
+| Singleton  | Creational  | ItemRepository.cs  | 11-26  | Ensures only one instance of the item repository exists in memory. This prevents duplicate or out-of-sync data.  |
 
-## SOLID Principles
-Our project made sure none of the primary SOLID principles were violated. One example is we segregated interfaces to make sure that classes do not implement methods that are not necessarily for it. The ICustomerService and IEmployeeService interfaces are separate, not allowing customers to access employee methods. Another example is the open/closed principle can be used if another notifier algorithm needed to be created. No existing code has to be updated, only a new interface and service class inheriting from the notifier template. 
+## Design Decisions
 
-One area that could be factored to establish better principles is the UserService. Regular users might not necessarly need to remove/update other users and could be seen as a method for the ManagerService. 
+**Main Components**\
+Our project is built around four directories: Domain, Repositories, Services, and Contracts. The Domain directory holds all of the base classes/enums. The Repositories directory holds all of the repositories used. The Services directory holds all of the service classes needed to run our project. The Contracts directory holds all of the interface classes that initialize the service/repository classes. Each layer can communicate with each other through interfaces rather than the concrete classes. This keeps our project easy to follow and does not violate the Dependency Inversion Principle in SOLID.   
 
-## Individual Reflection
-**Matthew Shaw**
-* What were your primary contributions to the project?
-    - My primary contributions to the project were the user and item implementation, updating the README.md file, helping with the UML creation, and coming up with our idea for the project. 
-* What technical or design concept do you now understand more deeply?
-    - The technical or design concept I now understand more deeply is the strategy design. I originally thought it was a different way to do the factory method since they are very similar. Now I know that it incorporates the use of abstract classes and methods with overriding methods. 
-* How did collaboration influence your team’s success or challenges?
-    - Collaboration influenced my team's success by allowing all of us to work at our own pace and assigning tasks to our own strengths. 
-* If given more time, what would you change or extend?
-    - If given more time, I would extend the login feature to be more secure by creating a password hash and comparing the user's input to that hash. 
+**Key Abstractions**
+* Interfaces
+    * Defines a skeleton for class implementation instead of relying on concrete implementation
+* User Class
+    * The Employee, Manager, and Customer classes inherit from the User class
+* Notifier Class
+    * Both a Template Method and Strategy pattern
+    * Defines a notification skeleton with other classes implementing their own message strategy
+* ItemRepository
+    * Uses the Singleton design pattern
+    * Only allows one object to exist in memory, preventing duplicate or out-of-sync data
 
-**Member 2**
-* What were your primary contributions to the project?
-* What technical or design concept do you now understand more deeply?
-* How did collaboration influence your team’s success or challenges?
-* If given more time, what would you change or extend?
-
-**Member 3**
-* What were your primary contributions to the project?
-* What technical or design concept do you now understand more deeply?
-* How did collaboration influence your team’s success or challenges?
-* If given more time, what would you change or extend?
+**Trade Offs**\
+Using interfaces does add more files within the project, but it makes it easier to understand the implementation behind the classes and provide extension when necessary. 
