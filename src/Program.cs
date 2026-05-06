@@ -18,7 +18,7 @@ class Program
 
         // Initialize system requirements
         FileService fileService = new FileService();
-        IItemRepository itemRepository = new ItemRepository();
+        IItemRepository itemRepository = ItemRepository.GetInstance();
         IUserRepository userRepository = new UserRepository();
 
         IItemService itemService = new ItemService(itemRepository);

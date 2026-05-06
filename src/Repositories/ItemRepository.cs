@@ -8,12 +8,21 @@ namespace ITCS3112InventoryManagementSystem.Repositories;
 
 public class ItemRepository : IItemRepository
 {
+    private static ItemRepository _instance = null;
     private readonly Dictionary<int, Item> _items;
-
-    public ItemRepository()
+    private ItemRepository()
     {
-        // THIS IS THE LINE THAT GOT DELETED IN THE MERGE
         _items = new Dictionary<int, Item>();
+    }
+
+    public static ItemRepository GetInstance()
+    {
+        if (_instance == null)
+        {
+            _instance = new ItemRepository();
+        }
+
+        return _instance;
     }
 
     public void AddItem(Item item)
