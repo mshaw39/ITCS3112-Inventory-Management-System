@@ -23,6 +23,9 @@ class Program
 
         IItemService itemService = new ItemService(itemRepository);
         UserService userService = new UserService(userRepository);
+        
+        // Initialize the new Enum Filter Service
+        IEnumFilterService enumFilterService = new EnumFilterService(itemService);
 
         // Instantiate the Role Services
         ICustomerService customerService = new CustomerService(userService, itemRepository);
@@ -30,11 +33,11 @@ class Program
         ManagerService managerService = new ManagerService(userService, itemRepository);
 
         // Read file and store to runtime inventory
-        Console.Write("\nEnter inventory file path (Press Enter for default '../../../docs/Inventory.json'): ");
+        Console.Write("\nEnter inventory file path (Press Enter for default '~/../../docs/Inventory.json'): ");
         string? userInput = Console.ReadLine();
         string filePath = string.IsNullOrWhiteSpace(userInput) ? "../../../docs/Inventory.json" : userInput;
 
-        List<Item> loadedItems = fileService.readFile(filePath);
+        List<Item> loadedItems = fileService.ReadFile(filePath);
         if (loadedItems != null)
         {
             foreach (Item item in loadedItems)
@@ -48,6 +51,10 @@ class Program
                 }
             }
         }
+        else
+        {
+            Console.WriteLine("File is empty!");
+        }
 
         // Populate user service with our mock users
         User aliceManager = new Manager(1, "Alice Admin");
@@ -60,7 +67,7 @@ class Program
 
         // application loop
         bool appIsRunning = true;
-        User? currentUser = null;
+        User currentUser = null;
 
         while (appIsRunning)
         {
@@ -96,7 +103,12 @@ class Program
             // --- DYNAMIC MENU GENERATION ---
             Console.WriteLine("\n================ MAIN MENU ================");
 
-            List<string> menuOptions = new List<string> { "View Full Inventory" };
+            // Option 1 and 2 are shared by everyone
+            List<string> menuOptions = new List<string> 
+            { 
+                "View Full Inventory",
+                "Filter Inventory by Category"
+            };
 
             // Manager gets full administrative access
             if (currentUser is Manager)
@@ -105,12 +117,14 @@ class Program
                 menuOptions.Add("Update Item Quantity (ItemService)");
                 menuOptions.Add("Manage Auto-Orders (ManagerService)");
                 menuOptions.Add("View All Users (UserService)");
+                menuOptions.Add("Order Item Stock (OrderService)");
             }
             // Employee gets operations access
             else if (currentUser is Employee)
             {
                 menuOptions.Add("Request Low-Stock Order (EmployeeService)");
                 menuOptions.Add("View All Users (UserService)");
+                menuOptions.Add("Order Item Stock (OrderService)");
             }
             // Customer gets public access
             else if (currentUser is Customer)
@@ -120,7 +134,9 @@ class Program
 
             menuOptions.Add("Log Out");
             menuOptions.Add("Save and Exit");
+            // End of customized menu creation
 
+            // Display of custom menu
             for (int i = 0; i < menuOptions.Count; i++)
             {
                 Console.WriteLine($"{i + 1}. {menuOptions[i]}");
@@ -147,10 +163,67 @@ class Program
                     foreach (Item item in items.OrderBy(i => i.ItemId))
                     {
                         Console.WriteLine(
-                            $"[ID: {item.ItemId}] {item.Name,-30} | Type: {item.ItemType,-15} | Qty: {item.Quantity,-4} | Loc: {item.Location,-15} | Season: {item.Seasonal}");
+                            $"[ID: {item.ItemId}] {item.Name,-35} | Type: {item.ItemType,-20} | Qty: {item.Quantity,-8} | Loc: {item.Location,-20} | Season: {item.Seasonal}");
+                    }
+
+                    break;
+
+                case "Filter Inventory by Category":
+                    Console.WriteLine("1. Filter by Item Type");
+                    Console.WriteLine("2. Filter by Season");
+                    Console.Write("Choice: ");
+                    string? filterChoice = Console.ReadLine();
+
+                    List<Item> filteredItems = new List<Item>();
+
+                    if (filterChoice == "1")
+                    {
+                        Console.WriteLine("\n--- Select Item Type ---");
+                        foreach (ItemTypeEnum type in Enum.GetValues(typeof(ItemTypeEnum)))
+                        {
+                            Console.WriteLine($"{(int)type}. {type}");
+                        }
+                        Console.Write("Enter Type Number: ");
+                        if (int.TryParse(Console.ReadLine(), out int typeSelection) && Enum.IsDefined(typeof(ItemTypeEnum), typeSelection))
+                        {
+                            filteredItems = enumFilterService.FilterByItemType((ItemTypeEnum)typeSelection);
+                        }
+                        else { Console.WriteLine("[Error] Invalid selection."); }
+                    }
+                    else if (filterChoice == "2")
+                    {
+                        Console.WriteLine("\n--- Select Season ---");
+                        foreach (SeasonalEnum season in Enum.GetValues(typeof(SeasonalEnum)))
+                        {
+                            Console.WriteLine($"{(int)season}. {season}");
+                        }
+                        Console.Write("Enter Season Number: ");
+                        if (int.TryParse(Console.ReadLine(), out int seasonSelection) && Enum.IsDefined(typeof(SeasonalEnum), seasonSelection))
+                        {
+                            filteredItems = enumFilterService.FilterBySeasonal((SeasonalEnum)seasonSelection);
+                        }
+                        else { Console.WriteLine("[Error] Invalid selection."); }
+                    }
+                    else
+                    {
+                        Console.WriteLine("[Error] Invalid choice.");
+                    }
+
+                    if (filteredItems.Count > 0)
+                    {
+                        Console.WriteLine($"\n--- Filtered Inventory ({filteredItems.Count} items) ---");
+                        foreach (Item item in filteredItems.OrderBy(i => i.ItemId))
+                        {
+                            Console.WriteLine(
+                                $"[ID: {item.ItemId}] {item.Name,-35} | Type: {item.ItemType,-20} | Qty: {item.Quantity,-8} | Loc: {item.Location,-20} | Season: {item.Seasonal}");
+                        }
+                    }
+                    else if (filterChoice == "1" || filterChoice == "2")
+                    {
+                        Console.WriteLine("\nNo items found for that category.");
                     }
                     break;
-                    
+
                 case "View All Users (UserService)":
                     List<User> users = userService.ListAllUsers();
                     Console.WriteLine($"--- Registered Users ({users.Count}) ---");
@@ -158,6 +231,7 @@ class Program
                     {
                         Console.WriteLine($"[ID: {user.UserId}] {user.Name,-15} - Role: {user.Status}");
                     }
+
                     break;
 
                 case "Add New Item (ItemService)":
@@ -165,7 +239,7 @@ class Program
                     {
                         Console.Write("Enter New Item ID (e.g., 2000): ");
                         int newId = int.Parse(Console.ReadLine() ?? "0");
-                        
+
                         Console.Write("Enter Item Name: ");
                         string newName = Console.ReadLine() ?? "Unknown Item";
 
@@ -173,9 +247,9 @@ class Program
                         int newQty = int.Parse(Console.ReadLine() ?? "0");
 
                         Console.Write("Enter Location: ");
-                        string newLoc = Console.ReadLine() ?? "Unknown";
+                        string newLoc = Console.ReadLine() ?? "Warehouse";
 
-                        // --- ENUM PROMPT: Item Type ---
+                        // Display of Item Type options for user to select from
                         Console.WriteLine("\n--- Select Item Type ---");
                         foreach (ItemTypeEnum type in Enum.GetValues(typeof(ItemTypeEnum)))
                         {
@@ -186,7 +260,7 @@ class Program
                         int typeSelection = int.Parse(Console.ReadLine() ?? "0");
                         ItemTypeEnum selectedType = (ItemTypeEnum)typeSelection;
 
-                        // --- ENUM PROMPT: Seasonal ---
+                        // Display of Seasonal Type options for user to select from
                         Console.WriteLine("\n--- Select Season ---");
                         foreach (SeasonalEnum season in Enum.GetValues(typeof(SeasonalEnum)))
                         {
@@ -197,7 +271,7 @@ class Program
                         int seasonSelection = int.Parse(Console.ReadLine() ?? "0");
                         SeasonalEnum selectedSeason = (SeasonalEnum)seasonSelection;
 
-                        // Create the item with the dynamic selections
+                        // Create the item
                         Item newItem = new Item(newId, newName, newQty, selectedType, newLoc, selectedSeason);
                         itemService.NewItem(newItem);
                         Console.WriteLine($"\n[Success] {selectedType} Item '{newName}' (ID: {newId}) added!");
@@ -219,11 +293,13 @@ class Program
 
                         if (foundItem != null)
                         {
-                            Console.WriteLine($"Current Quantity for '{foundItem.Name}' (ID {updateId}): {foundItem.Quantity}");
+                            Console.WriteLine(
+                                $"Current Quantity for '{foundItem.Name}' (ID {updateId}): {foundItem.Quantity}");
                             Console.Write("Enter NEW Quantity: ");
                             int updatedQty = int.Parse(Console.ReadLine() ?? "0");
 
-                            foundItem.UpdateItem(foundItem.ItemId, foundItem.Name, updatedQty, foundItem.ItemType, foundItem.Location, foundItem.Seasonal);
+                            foundItem.UpdateItem(foundItem.ItemId, foundItem.Name, updatedQty, foundItem.ItemType,
+                                foundItem.Location, foundItem.Seasonal);
                             itemService.UpdateItem(foundItem);
                             Console.WriteLine("[Success] Quantity updated!");
 
@@ -245,12 +321,26 @@ class Program
                     Console.Write("Enter the Item ID you wish to reserve: ");
                     if (int.TryParse(Console.ReadLine(), out int reserveId))
                     {
+                        var itemName = itemRepository.GetItemById(reserveId).Name;
+
                         Console.Write("Enter the quantity you wish to reserve: ");
                         if (int.TryParse(Console.ReadLine(), out int reserveQty))
                         {
-                            customerService.ReserveItem(reserveId, reserveQty);
+                            // Checks for outstanding auto order deliveries
                             managerService.TriggerAutoOrders();
+                            // Reserves items for the customer
+                            bool success = customerService.ReserveItem(reserveId, reserveQty);
+                            // If the item has dipped below autoOrder threshold, order them again
+                            managerService.TriggerAutoOrders();
+                            
+                            if (success)
+                            {
+                                INotifier notifier = new SMSNotifier();
+                                notifier.SendNotification(
+                                    $"Your order for {reserveQty}x of Item {itemName} is ready for pickup.");
+                            }
                         }
+
                         else
                         {
                             Console.WriteLine("[Error] Invalid quantity format.");
@@ -260,6 +350,32 @@ class Program
                     {
                         Console.WriteLine("[Error] Invalid ID format.");
                     }
+
+                    break;
+
+                case "Order Item Stock (OrderService)":
+                    Console.Write("Enter the Item ID to order: ");
+                    if (int.TryParse(Console.ReadLine(), out int orderItemId))
+                    {
+                        Console.Write("Enter the quantity to order: ");
+                        if (int.TryParse(Console.ReadLine(), out int orderQty) && orderQty > 0)
+                        {
+                            // Alternative notifier type for Managers and Employees
+                            INotifier notifier = new EmailNotifier();
+                            // Inject the notifier and the repository into the OrderService
+                            IOrderService orderService = new OrderService(notifier, itemRepository);
+                            orderService.OrderStock(orderItemId, orderQty);
+                        }
+                        else
+                        {
+                            Console.WriteLine("[Error] Invalid quantity. Must be greater than 0.");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("[Error] Invalid ID format.");
+                    }
+
                     break;
 
                 case "Request Low-Stock Order (EmployeeService)":
@@ -306,7 +422,7 @@ class Program
         // Save and Exit
         Console.WriteLine("\nSaving data...");
         fileService.InventoryData = itemService.ListAllItems();
-        fileService.saveFile(filePath);
+        fileService.SaveFile(filePath);
 
         Console.WriteLine("Goodbye!");
     }

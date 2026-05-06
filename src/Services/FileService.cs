@@ -11,7 +11,7 @@ public class FileService : IFileService
 {
     public List<Item> InventoryData { get; set; } = new List<Item>();
 
-    public List<Item> readFile(string filePath)
+    public List<Item> ReadFile(string filePath)
     {
         try
         {
@@ -43,7 +43,7 @@ public class FileService : IFileService
         return InventoryData;
     }
 
-    public void saveFile(string filePath)
+    public void SaveFile(string filePath)
     {
         try
         {

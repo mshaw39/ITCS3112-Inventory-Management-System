@@ -31,7 +31,7 @@ public class ItemRepository : IItemRepository
         {
             throw new ArgumentNullException(nameof(item), "Item cannot be null.");
         } 
-        else if (_items.ContainsKey(item.ItemId)) // <--- Line 26 was crashing right here because _items was null
+        else if (_items.ContainsKey(item.ItemId)) 
         {
             throw new ArgumentException($"An item with ID {item.ItemId} already exists.");
         }

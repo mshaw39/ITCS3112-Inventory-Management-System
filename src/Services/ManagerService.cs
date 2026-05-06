@@ -13,7 +13,7 @@ public class ManagerService : IManagerService
     private readonly IItemRepository _itemRepository;
     private HashSet<int> _activeAutoOrders; 
     
-    // CORRECTED PATH: Goes up 3 levels to the root, then into the docs folder
+    
     private readonly string _autoOrderFilePath = "../../../docs/AutoOrders.json";
 
     public ManagerService(UserService userService, IItemRepository itemRepository)
@@ -21,7 +21,7 @@ public class ManagerService : IManagerService
         _userService = userService;
         _itemRepository = itemRepository;
         _activeAutoOrders = new HashSet<int>();
-        LoadAutoOrders(); // Load from file on startup
+        LoadAutoOrders(); 
     }
 
     private void LoadAutoOrders()
@@ -65,7 +65,7 @@ public class ManagerService : IManagerService
         if (_activeAutoOrders.Add(orderId))
         {
             Console.WriteLine($"[ManagerService] Auto-order for Item #{orderId} activated.");
-            SaveAutoOrders(); // Save changes immediately
+            SaveAutoOrders(); 
         }
         else
         {
@@ -83,7 +83,7 @@ public class ManagerService : IManagerService
         if (_activeAutoOrders.Remove(orderId))
         {
             Console.WriteLine($"[ManagerService] Auto-order for Item #{orderId} has been deactivated.");
-            SaveAutoOrders(); // Save changes immediately
+            SaveAutoOrders(); 
         }
         else
         {

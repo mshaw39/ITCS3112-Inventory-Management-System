@@ -14,12 +14,12 @@ public class CustomerService : ICustomerService
         _itemRepository = itemRepository;
     }
 
-    public void ReserveItem(int itemId, int quantityToReserve)
+    public bool ReserveItem(int itemId, int quantityToReserve)
     {
         if (quantityToReserve <= 0)
         {
             Console.WriteLine("[CustomerService] Error: Reservation quantity must be greater than zero.");
-            return;
+            return false;
         }
 
         Item? repoItem = _itemRepository.GetItemById(itemId);
@@ -29,14 +29,17 @@ public class CustomerService : ICustomerService
         {
             repoItem.Quantity -= quantityToReserve; 
             Console.WriteLine($"[CustomerService] Success: Reserved {quantityToReserve}x '{repoItem.Name}' (ID: {repoItem.ItemId}). Remaining stock: {repoItem.Quantity}");
+            return true;
         }
         else if (repoItem != null)
         {
             Console.WriteLine($"[CustomerService] Failed: Not enough stock for '{repoItem.Name}'. Requested: {quantityToReserve}, Available: {repoItem.Quantity}");
+            return false;
         }
         else
         {
             Console.WriteLine($"[CustomerService] Failed: Item ID {itemId} does not exist.");
+            return false;
         }
     }
 }

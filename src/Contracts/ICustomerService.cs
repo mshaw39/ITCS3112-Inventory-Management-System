@@ -1,4 +1,3 @@
-using ITCS3112InventoryManagementSystem.Domain;
 namespace ITCS3112InventoryManagementSystem.Contracts;
 
 /// <summary>
@@ -8,15 +7,10 @@ namespace ITCS3112InventoryManagementSystem.Contracts;
 public interface ICustomerService
 {
     /// <summary>
-    /// Reserves an item for a customer.
+    /// Reserves a specific quantity of an item for a customer by its ID.
     /// </summary>
-    /// <param name="item">The item to be reserved.</param>
-    /// <remarks>
-    /// Preconditions:
-    /// <paramref name="item"/> is not null and has a valid identifier.
-    /// Postconditions:
-    /// The item is reserved for the customer if it is available; 
-    /// otherwise, no changes are made to the <see cref="IItemRepository"/>.
-    /// </remarks>
-    public void ReserveItem(int itemId, int quantityToReserve);
+    /// <param name="itemId">The ID of the item to be reserved.</param>
+    /// <param name="quantityToReserve">The amount to reserve.</param>
+    /// <returns>True if the reservation was successful, false otherwise.</returns>
+    public bool ReserveItem(int itemId, int quantityToReserve);
 }

@@ -58,7 +58,7 @@
   {
     "ItemId": 1008,
     "Name": "Stainless Steel Fridge",
-    "Quantity": 12,
+    "Quantity": 62,
     "ItemType": 0,
     "Location": "Bulk Storage Area",
     "Seasonal": 0
@@ -90,7 +90,7 @@
   {
     "ItemId": 1012,
     "Name": "Gas Range Stove",
-    "Quantity": 8,
+    "Quantity": 58,
     "ItemType": 0,
     "Location": "Warehouse Rack 5",
     "Seasonal": 0
@@ -138,7 +138,7 @@
   {
     "ItemId": 1018,
     "Name": "Carrier Weathermaker Gas Valve",
-    "Quantity": 10,
+    "Quantity": 60,
     "ItemType": 11,
     "Location": "Warehouse Rack 18",
     "Seasonal": 0
@@ -186,7 +186,7 @@
   {
     "ItemId": 1024,
     "Name": "Chandelier Fixture",
-    "Quantity": 12,
+    "Quantity": 62,
     "ItemType": 3,
     "Location": "Aisle 12, Shelf D",
     "Seasonal": 0
@@ -266,7 +266,7 @@
   {
     "ItemId": 1034,
     "Name": "Carpet Roll 12ft",
-    "Quantity": 14,
+    "Quantity": 64,
     "ItemType": 4,
     "Location": "Display Case 2",
     "Seasonal": 0
@@ -642,7 +642,7 @@
   {
     "ItemId": 1081,
     "Name": "Weather Stripping Roll",
-    "Quantity": 140,
+    "Quantity": 152,
     "ItemType": 5,
     "Location": "Aisle 5",
     "Seasonal": 9
@@ -810,7 +810,7 @@
   {
     "ItemId": 1999,
     "Name": "EggBasket",
-    "Quantity": 40,
+    "Quantity": 72,
     "ItemType": 13,
     "Location": "Aisle 3, Bay 15",
     "Seasonal": 2
